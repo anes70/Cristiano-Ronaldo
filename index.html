@@ -209,7 +209,7 @@
     color:var(--sage);margin-top:6px;
   }
 
-  /* ---------- section headers & content ---------- */
+  /* ---------- section headers ---------- */
   .eyebrow-sm{
     font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.3em;
     text-transform:uppercase;color:var(--gold);margin-bottom:16px;
@@ -217,51 +217,15 @@
   h2.title{font-size:clamp(34px,5vw,64px);max-width:760px;margin-bottom:20px;}
   .lede{max-width:640px;color:var(--sage);font-size:17px;line-height:1.7;}
 
-  /* ---------- images styling ---------- */
-  .img-wrapper {
-    position: relative;
-    width: 100%;
-    border-radius: 8px;
-    overflow: hidden;
-    border: 1px solid var(--line);
-    background: var(--pitch-black);
-  }
-  .img-wrapper::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    box-shadow: inset 0 0 40px rgba(0,0,0,0.6);
-    pointer-events: none;
-  }
-  .img-wrapper img {
-    width: 100%;
-    height: auto;
-    display: block;
-    transition: transform 0.6s ease;
-    object-fit: cover;
-  }
-  .img-wrapper:hover img {
-    transform: scale(1.04);
-  }
-  .image-caption {
-    font-family: 'Space Mono', monospace;
-    font-size: 11px;
-    color: var(--sage);
-    margin-top: 10px;
-    text-align: right;
-    letter-spacing: 0.05em;
-  }
-
   /* ---------- bio ---------- */
-  #bio .cols{display:grid;grid-template-columns:1fr 1fr;gap:70px;margin-top:60px;align-items:center;}
-  @media(max-width:800px){#bio .cols{grid-template-columns:1fr; gap: 40px;}}
+  #bio .cols{display:grid;grid-template-columns:1fr 1fr;gap:70px;margin-top:60px;align-items:start;}
+  @media(max-width:800px){#bio .cols{grid-template-columns:1fr;}}
   #bio p{color:var(--ivory);opacity:0.88;font-size:16px;line-height:1.85;margin-bottom:18px;}
   #bio .quote-block{
     border-left:2px solid var(--portugal-red);
     padding-left:24px;font-family:'Anton',sans-serif;
     font-size:26px;line-height:1.3;color:var(--gold);
     text-transform:uppercase;
-    margin-top: 40px;
   }
 
   /* ---------- timeline (clubs) ---------- */
@@ -340,10 +304,10 @@
     margin-bottom:26px;
   }
   #nation .flag-dot{width:8px;height:8px;border-radius:50%;background:var(--portugal-red);}
-  #nation .cols{display:grid;grid-template-columns:1fr 1fr;gap:70px;margin-top:50px;align-items:center;}
-  @media(max-width:800px){#nation .cols{grid-template-columns:1fr; gap: 40px;}}
+  #nation .cols{display:grid;grid-template-columns:1.1fr 0.9fr;gap:70px;margin-top:50px;}
+  @media(max-width:800px){#nation .cols{grid-template-columns:1fr;}}
   #nation p{color:var(--ivory);opacity:0.85;font-size:16px;line-height:1.85;margin-bottom:16px;}
-  .milestone-list{list-style:none; margin-top: 30px;}
+  .milestone-list{list-style:none;}
   .milestone-list li{
     display:flex;justify-content:space-between;gap:20px;
     padding:16px 0;border-top:1px solid var(--line);
@@ -357,7 +321,6 @@
   footer{
     padding:70px 8vw 50px;text-align:center;
     border-top:1px solid var(--line);
-    background: var(--pitch-black);
   }
   footer .num7-small{
     font-family:'Anton',sans-serif;font-size:44px;color:var(--gold);
@@ -386,7 +349,7 @@
 <!-- MUSIC WIDGET -->
 <div id="musicWidget">
   <button id="muteBtn" aria-label="Mettre en pause la musique">
-    <div class="eq paused" id="eq"><span></span><span></span><span></span><span></span></div>
+    <div class="eq" id="eq"><span></span><span></span><span></span><span></span></div>
   </button>
   <div class="track-info">LE ROI DE LA MONTAGNE — EN BOUCLE</div>
 </div>
@@ -412,7 +375,7 @@
   </div>
 </div>
 
-<!-- BIO (Image intégrée ici) -->
+<!-- BIO -->
 <section id="bio">
   <div class="section-inner">
     <div class="eyebrow-sm reveal">Portrait</div>
@@ -421,17 +384,10 @@
       <div class="reveal">
         <p>Cristiano Ronaldo dos Santos Aveiro naît le 5 février 1985 à Funchal, sur l'île portugaise de Madère. Repéré très jeune, il rejoint le Sporting Clube de Portugal où il traverse toutes les catégories de jeunes avant de percer en équipe première, impressionnant par sa vitesse, son sens du dribble et une envie de travailler que ses entraîneurs qualifient d'exceptionnelle.</p>
         <p>En 2003, un match amical face au Sporting suffit à convaincre Manchester United de le recruter. Il n'a que 18 ans. Commence alors une carrière qui le mènera dans les plus grands clubs d'Europe puis d'Arabie saoudite, façonnant au passage une bonne partie des livres de records du football moderne.</p>
-        <div class="quote-block">
-          « Le talent sans travail n'est rien. »<br>
-          <span style="font-family:'Space Mono',monospace;font-size:12px;color:var(--sage);text-transform:none;letter-spacing:0.05em;">— principe attribué au joueur par de nombreux coéquipiers et entraîneurs au fil de sa carrière</span>
-        </div>
       </div>
-      <!-- INTÉGRATION DE LA PREMIÈRE IMAGE -->
-      <div class="reveal">
-        <div class="img-wrapper" style="border-color: var(--gold-dim);">
-          <img src="GetSearchResultPng.jpg" alt="Cristiano Ronaldo au Real Madrid">
-        </div>
-        <p class="image-caption">Sous les couleurs du Real Madrid, où il a écrit l'histoire.</p>
+      <div class="quote-block reveal">
+        « Le talent sans travail n'est rien. »<br>
+        <span style="font-family:'Space Mono',monospace;font-size:12px;color:var(--sage);text-transform:none;letter-spacing:0.05em;">— principe attribué au joueur par de nombreux coéquipiers et entraîneurs au fil de sa carrière</span>
       </div>
     </div>
   </div>
@@ -570,33 +526,25 @@
   </div>
 </section>
 
-<!-- NATIONAL TEAM (Image intégrée ici) -->
+<!-- NATIONAL TEAM -->
 <section id="nation">
   <div class="section-inner">
     <div class="badge"><span class="flag-dot"></span>Seleção das Quinas</div>
     <h2 class="title reveal">Vingt-trois ans sous le maillot du Portugal.</h2>
     <div class="cols">
-      <!-- INTÉGRATION DE LA SECONDE IMAGE -->
-      <div class="reveal">
-        <div class="img-wrapper" style="border-color: var(--portugal-red-dim);">
-          <img src="GetSearchResultPng (1).jpg" alt="Ronaldo avec le maillot du Portugal">
-        </div>
-        <p class="image-caption">Capitaine emblématique de la Seleção.</p>
-      </div>
       <div class="reveal">
         <p>Débuts en sélection le 20 août 2003 face au Kazakhstan, capitaine depuis 2007 : Cristiano Ronaldo aura porté le brassard portugais plus longtemps que la plupart des joueurs ne portent leur maillot. Il devient en 2023 le premier international de l'histoire à atteindre les 200 sélections, avant de continuer à repousser ce record saison après saison.</p>
         <p>Sur le plan collectif, il soulève l'Euro 2016 — le premier grand trophée international du Portugal — malgré une sortie sur blessure en finale, puis remporte la Ligue des nations à deux reprises, en 2019 et en 2025 face à l'Espagne aux tirs au but.</p>
-        
-        <ul class="milestone-list">
-          <li><span class="y">2003</span><span class="d">Première sélection face au Kazakhstan</span></li>
-          <li><span class="y">2007</span><span class="d">Nommé capitaine du Portugal</span></li>
-          <li><span class="y">2016</span><span class="d">Vainqueur de l'Euro (finale face à la France)</span></li>
-          <li><span class="y">2019</span><span class="d">Premier titre en Ligue des nations</span></li>
-          <li><span class="y">2023</span><span class="d">1er international à 200 sélections</span></li>
-          <li><span class="y">2025</span><span class="d">2e titre en Ligue des nations, face à l'Espagne</span></li>
-          <li><span class="y">2026</span><span class="d">6e Coupe du monde disputée, buteur à chaque édition</span></li>
-        </ul>
       </div>
+      <ul class="milestone-list reveal">
+        <li><span class="y">2003</span><span class="d">Première sélection face au Kazakhstan</span></li>
+        <li><span class="y">2007</span><span class="d">Nommé capitaine du Portugal</span></li>
+        <li><span class="y">2016</span><span class="d">Vainqueur de l'Euro (finale face à la France)</span></li>
+        <li><span class="y">2019</span><span class="d">Premier titre en Ligue des nations</span></li>
+        <li><span class="y">2023</span><span class="d">1er international à 200 sélections</span></li>
+        <li><span class="y">2025</span><span class="d">2e titre en Ligue des nations, face à l'Espagne</span></li>
+        <li><span class="y">2026</span><span class="d">6e Coupe du monde disputée, buteur à chaque édition</span></li>
+      </ul>
     </div>
   </div>
 </section>
@@ -615,43 +563,25 @@
   const muteBtn = document.getElementById('muteBtn');
   const eq = document.getElementById('eq');
 
-  let playing = false;
-
-  // Code amélioré pour gérer l'absence éventuelle du fichier audio
   playBtn.addEventListener('click', () => {
     audio.volume = 0.55;
+    audio.play().catch(()=>{});
     gate.classList.add('hidden');
     musicWidget.classList.add('show');
-    
-    // Tente de jouer l'audio. Si le fichier n'est pas trouvé, l'interface s'adapte sans casser
-    const playPromise = audio.play();
-    if (playPromise !== undefined) {
-      playPromise.then(() => {
-        playing = true;
-        eq.classList.remove('paused');
-      }).catch(error => {
-        console.warn("Fichier audio non trouvé ou lecture bloquée par le navigateur :", error);
-        playing = false;
-        eq.classList.add('paused');
-      });
-    }
   });
 
+  let playing = true;
   muteBtn.addEventListener('click', () => {
     if(playing){
       audio.pause();
       eq.classList.add('paused');
       muteBtn.setAttribute('aria-label','Reprendre la musique');
-      playing = false;
     } else {
-      audio.play().then(() => {
-        eq.classList.remove('paused');
-        muteBtn.setAttribute('aria-label','Mettre en pause la musique');
-        playing = true;
-      }).catch(error => {
-        console.warn("Impossible de lire l'audio :", error);
-      });
+      audio.play().catch(()=>{});
+      eq.classList.remove('paused');
+      muteBtn.setAttribute('aria-label','Mettre en pause la musique');
     }
+    playing = !playing;
   });
 
   // scroll reveal
