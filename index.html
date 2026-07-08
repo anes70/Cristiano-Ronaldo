@@ -376,12 +376,14 @@
 </head>
 <body>
 
+<!-- ENTRY GATE -->
 <div id="gate">
   <div class="num7" aria-hidden="true">7</div>
   <p class="eyebrow">Un hommage sonore &amp; visuel</p>
   <button id="playBtn">▶ Entrer avec l'hymne</button>
 </div>
 
+<!-- MUSIC WIDGET -->
 <div id="musicWidget">
   <button id="muteBtn" aria-label="Mettre en pause la musique">
     <div class="eq paused" id="eq"><span></span><span></span><span></span><span></span></div>
@@ -389,8 +391,10 @@
   <div class="track-info">LE ROI DE LA MONTAGNE — EN BOUCLE</div>
 </div>
 
-<audio id="bgAudio" src="Roi_de_la_montagne.mp3" loop preload="auto"></audio>
+<!-- AUDIO AVEC LIEN DIRECT GITHUB -->
+<audio id="bgAudio" src="https://raw.githubusercontent.com/anes70/Cristiano-Ronaldo/main/Roi_de_la_montagne.mp3" loop preload="auto"></audio>
 
+<!-- HERO -->
 <section id="hero">
   <div class="watermark" aria-hidden="true">7</div>
   <div class="eyebrow">Sporting · Man United · Real Madrid · Juventus · Al-Nassr · Portugal</div>
@@ -399,6 +403,7 @@
   <div class="scroll-cue"><div class="line"></div>Défiler</div>
 </section>
 
+<!-- TICKER -->
 <div id="ticker">
   <div class="ticker-grid">
     <div class="stat reveal"><div class="num" data-target="900" data-suffix="+">0</div><div class="lab">Buts en carrière</div></div>
@@ -408,6 +413,7 @@
   </div>
 </div>
 
+<!-- BIO (IMAGE 1 AVEC LIEN DIRECT GITHUB) -->
 <section id="bio">
   <div class="section-inner">
     <div class="eyebrow-sm reveal">Portrait</div>
@@ -423,7 +429,7 @@
       </div>
       <div class="reveal">
         <div class="img-wrapper" style="border-color: var(--gold-dim);">
-          <img src="photo1.jpg" alt="Cristiano Ronaldo au Real Madrid">
+          <img src="https://raw.githubusercontent.com/anes70/Cristiano-Ronaldo/main/GetSearchResultPng.jpg" alt="Cristiano Ronaldo au Real Madrid">
         </div>
         <p class="image-caption">Sous les couleurs du Real Madrid, où il a écrit l'histoire.</p>
       </div>
@@ -431,6 +437,7 @@
   </div>
 </section>
 
+<!-- CLUB TIMELINE -->
 <section id="route">
   <div class="section-inner">
     <div class="eyebrow-sm reveal">Le parcours</div>
@@ -483,6 +490,7 @@
   </div>
 </section>
 
+<!-- RECORDS -->
 <section id="records">
   <div class="section-inner">
     <div class="eyebrow-sm reveal">Les exploits</div>
@@ -522,6 +530,7 @@
   </div>
 </section>
 
+<!-- ANECDOTES -->
 <section id="anecdotes">
   <div class="section-inner">
     <div class="eyebrow-sm reveal">Anecdotes</div>
@@ -561,6 +570,7 @@
   </div>
 </section>
 
+<!-- NATIONAL TEAM (IMAGE 2 AVEC LIEN DIRECT GITHUB) -->
 <section id="nation">
   <div class="section-inner">
     <div class="badge"><span class="flag-dot"></span>Seleção das Quinas</div>
@@ -568,7 +578,7 @@
     <div class="cols">
       <div class="reveal">
         <div class="img-wrapper" style="border-color: var(--portugal-red-dim);">
-          <img src="photo2.jpg" alt="Ronaldo avec le maillot du Portugal">
+          <img src="https://raw.githubusercontent.com/anes70/Cristiano-Ronaldo/main/GetSearchResultPng%20(1).jpg" alt="Ronaldo avec le maillot du Portugal">
         </div>
         <p class="image-caption">Capitaine emblématique de la Seleção.</p>
       </div>
@@ -606,13 +616,11 @@
 
   let playing = false;
 
-  // Code amélioré pour gérer l'absence éventuelle du fichier audio
   playBtn.addEventListener('click', () => {
     audio.volume = 0.55;
     gate.classList.add('hidden');
     musicWidget.classList.add('show');
     
-    // Tente de jouer l'audio. Si le fichier n'est pas trouvé, l'interface s'adapte sans casser
     const playPromise = audio.play();
     if (playPromise !== undefined) {
       playPromise.then(() => {
@@ -643,7 +651,6 @@
     }
   });
 
-  // scroll reveal
   const revealEls = document.querySelectorAll('.reveal');
   const io = new IntersectionObserver((entries)=>{
     entries.forEach(e=>{
@@ -652,7 +659,6 @@
   },{threshold:0.15});
   revealEls.forEach(el=>io.observe(el));
 
-  // ticker count-up
   const nums = document.querySelectorAll('.stat .num');
   const tickerIo = new IntersectionObserver((entries)=>{
     entries.forEach(e=>{
