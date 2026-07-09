@@ -392,7 +392,7 @@
   <div class="track-info">LE ROI DE LA MONTAGNE — EN BOUCLE</div>
 </div>
 
-<audio id="bgAudio" src="Roi_de_la_montagne.mp3" loop preload="auto"></audio>
+<audio id="bgAudio" src="Roi_de_la_montagne.mp3" loop preload="auto" onerror="console.error('Erreur de chargement du fichier audio', this.error)"></audio>
 
 <!-- HERO -->
 <section id="hero">
@@ -608,7 +608,16 @@
 
   playBtn.addEventListener('click', () => {
     audio.volume = 0.55;
-    audio.play().catch(()=>{});
+    audio.muted = false;
+    const p = audio.play();
+    if(p !== undefined){
+      p.then(() => {
+        console.log('Lecture audio démarrée avec succès');
+      }).catch((err) => {
+        console.error('Erreur de lecture audio :', err);
+        alert('Impossible de lire la musique : ' + err.message + '. Vérifie que le fichier Roi_de_la_montagne.mp3 est bien accessible.');
+      });
+    }
     gate.classList.add('hidden');
     musicWidget.classList.add('show');
   });
